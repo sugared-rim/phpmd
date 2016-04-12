@@ -1,0 +1,63 @@
+{
+    "name": "schnittstabil/sugared-phpmd",
+    "type": "library",
+    "description": "PHPMD sweetened with ease",
+    "license": "MIT",
+    "keywords": ["sugared", "preconfigured", "phpmd", "standards", "pmd", "mess detection", "mess detector"],
+    "authors": [
+        {
+            "name": "Michael Mayer",
+            "email": "michael@schnittstabil.de"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Schnittstabil\\Sugared\\PHPMD\\": "src" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Schnittstabil\\Sugared\\PHPMD\\": "tests" }
+    },
+    "require": {
+        "php": ">=5.6.0",
+        "schnittstabil/composer-extra": "^0.4",
+        "phpmd/phpmd": "^2.3",
+        "psr/log": "^1.0",
+        "fool/echolog": "^1.0"
+    },
+    "require-dev": {
+        "codeclimate/php-test-reporter": "^0.3",
+        "fabpot/php-cs-fixer": "^1.10",
+        "phpmetrics/phpmetrics": "^1.10",
+        "satooshi/php-coveralls": "^1.0",
+        "schnittstabil/sugared-phpunit": "^0.4",
+        "schnittstabil/sugared-php_codesniffer": "^0.1",
+        "vladahejda/phpunit-assert-exception": "^1.0",
+        "gamez/psr-testlogger": "^1.0"
+    },
+    "extra": {
+        "schnittstabil\/sugared-phpmd invalid inputfile": {
+            "inputfile": ""
+        }
+    },
+    "bin": [
+        "sugared-phpmd"
+    ],
+    "scripts": {
+        "clean": "rm -rf build/",
+        "doc": [
+            "sugared-sami",
+            "phpmetrics --report-html build/phpmetrics/index.html src/"
+        ],
+        "lint": [
+            "sugared-phpcs",
+            "phpmd sugared-phpmd,src,tests text cleancode,codesize,controversial,design,naming,unusedcode",
+            "php-cs-fixer fix --dry-run --diff sugared-phpmd",
+            "php-cs-fixer fix --dry-run --diff src",
+            "php-cs-fixer fix --dry-run --diff tests"
+        ],
+        "test": [
+            "sugared-phpunit",
+            "./sugared-phpmd",
+            "composer lint"
+        ]
+    }
+}

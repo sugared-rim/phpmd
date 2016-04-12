@@ -1,0 +1,5 @@
+# emtpy directory for test
+# Ignore everything in this directory
+*
+# Except this file
+!.gitignore
