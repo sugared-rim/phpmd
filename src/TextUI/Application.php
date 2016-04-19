@@ -11,11 +11,7 @@ use Schnittstabil\ComposerExtra\ComposerExtra;
 class Application
 {
     protected $defaultNamespace = 'schnittstabil/sugared-phpmd';
-    protected $defaultConfig = [
-        'presets' => [
-            'Schnittstabil\\Sugared\\PHPMD\\DefaultPreset::get',
-        ],
-    ];
+    protected $defaultConfig;
     protected $logger;
 
     public function __construct(LoggerInterface $logger = null)
@@ -26,6 +22,10 @@ class Application
         }
         // @codeCoverageIgnoreEnd
         $this->logger = $logger;
+        $this->defaultConfig = new \stdClass();
+        $this->defaultConfig->presets = [
+            'Schnittstabil\\Sugared\\PHPMD\\DefaultPreset::get',
+        ];
     }
 
     protected function getConfig($namespace)

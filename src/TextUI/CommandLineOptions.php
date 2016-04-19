@@ -4,9 +4,13 @@ namespace Schnittstabil\Sugared\PHPMD\TextUI;
 
 class CommandLineOptions extends \PHPMD\TextUI\CommandLineOptions
 {
-    public function __construct(array $args, array $availableRuleSets = array(), array $defaults = array())
+    public function __construct(array $args, array $availableRuleSets = array(), $defaults = null)
     {
-        foreach ($defaults as $k => $v) {
+        if ($defaults === null) {
+            $defaults = new \stdClass();
+        }
+
+        foreach (get_object_vars($defaults) as $k => $v) {
             switch ($k) {
                 case 'inputfile':
                     // prepend inputPath arg
@@ -15,7 +19,7 @@ class CommandLineOptions extends \PHPMD\TextUI\CommandLineOptions
                     array_unshift($args, $script);
                     break;
                 default:
-                    $this->{$k} = $v;
+                    $this->$k = $v;
             }
         }
 

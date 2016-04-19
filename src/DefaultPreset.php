@@ -6,10 +6,11 @@ class DefaultPreset
 {
     public static function get()
     {
-        return [
-            'inputPath' => 'src,tests',
-            'reportFormat' => 'text',
-            'ruleSets' => 'cleancode,codesize,controversial,design,naming,unusedcode',
-        ];
+        $config = new \stdClass();
+        $config->inputPath = 'src,tests';
+        $config->reportFormat = 'text';
+        $config->ruleSets = 'cleancode,codesize,controversial,design,naming,unusedcode';
+
+        return $config;
     }
 }

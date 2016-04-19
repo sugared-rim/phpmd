@@ -25,14 +25,20 @@ class CommandLineOptionsTest extends \PHPUnit_Framework_TestCase
 
     public function testCommandLineOptionsShouldThrowOnInvalidInputFileOption()
     {
-        $this->assertException(function () {
-            new CommandLineOptions(['-', 'text', 'cleancode'], [], ['inputfile' => uniqid()]);
+        $defaults = new \stdClass();
+        $defaults->inputfile = uniqid();
+
+        $this->assertException(function () use ($defaults) {
+            new CommandLineOptions(['-', 'text', 'cleancode'], [], $defaults);
         }, \InvalidArgumentException::class);
     }
 
     public function testCommandLineOptionsShouldNotThrowOnValidInputFileOption()
     {
-        new CommandLineOptions(['-', 'text', 'cleancode'], [], ['inputfile' => __DIR__.'/../Fixtures/inputfile.txt']);
+        $defaults = new \stdClass();
+        $defaults->inputfile = __DIR__.'/../Fixtures/inputfile.txt';
+
+        new CommandLineOptions(['-', 'text', 'cleancode'], [], $defaults);
     }
 
     /**
