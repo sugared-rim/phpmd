@@ -40,7 +40,7 @@ Some of the default settings:
         "lint": "sugared-phpmd"
     },
     "extra": {
-        "schnittstabil\/schnittstabil/sugared-phpmd": {
+        "schnittstabil\/sugared-phpmd": {
             "inputPath": "src,tests",
             "reportFormat": "text",
             "ruleSets": "cleancode,codesize,controversial,design,naming,unusedcode"
