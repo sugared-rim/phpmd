@@ -18,18 +18,12 @@
     },
     "require": {
         "php": ">=5.6.0",
-        "schnittstabil/composer-extra": "^0.5",
+        "schnittstabil/composer-extra": "^1.0",
         "phpmd/phpmd": "^2.3",
-        "psr/log": "^1.0",
         "fool/echolog": "^1.0"
     },
     "require-dev": {
-        "codeclimate/php-test-reporter": "^0.3",
-        "fabpot/php-cs-fixer": "^1.10",
-        "phpmetrics/phpmetrics": "^1.10",
-        "satooshi/php-coveralls": "^1.0",
-        "schnittstabil/sugared-phpunit": "^0.5",
-        "schnittstabil/sugared-php_codesniffer": "^0.2",
+        "schnittstabil/sugared-phpunit": "^1.0",
         "vladahejda/phpunit-assert-exception": "^1.0",
         "gamez/psr-testlogger": "^1.0"
     },
@@ -58,6 +52,7 @@
             "sugared-phpunit",
             "./sugared-phpmd",
             "composer lint"
-        ]
+        ],
+        "travis": "sugared-phpunit"
     }
 }
