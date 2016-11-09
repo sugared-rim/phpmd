@@ -1,6 +1,6 @@
 <?php
 
-namespace Schnittstabil\Sugared\PHPMD\TextUI;
+namespace SugaredRim\PHPMD\TextUI;
 
 use Gamez\Psr\Log\TestLoggerTrait;
 use PHPMD\TextUI\Command;
@@ -23,7 +23,7 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
         $sut = new Application($this->logger);
         $exitCode = $sut->main([
             '-',
-            '--namespace=schnittstabil/sugared-phpmd invalid inputfile',
+            '--namespace=sugared-rim/phpmd invalid inputfile',
             'tests/Fixtures/empty',
             'text',
             'cleancode',

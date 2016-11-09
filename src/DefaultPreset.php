@@ -1,6 +1,6 @@
 <?php
 
-namespace Schnittstabil\Sugared\PHPMD;
+namespace SugaredRim\PHPMD;
 
 class DefaultPreset
 {

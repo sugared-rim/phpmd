@@ -1,6 +1,6 @@
 <?php
 
-namespace Schnittstabil\Sugared\PHPMD\TextUI;
+namespace SugaredRim\PHPMD\TextUI;
 
 class CommandLineOptions extends \PHPMD\TextUI\CommandLineOptions
 {

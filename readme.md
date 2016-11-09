@@ -1,29 +1,29 @@
-# Sugared\PHPMD [![Build Status](https://travis-ci.org/schnittstabil/sugared-phpmd.svg?branch=master)](https://travis-ci.org/schnittstabil/sugared-phpmd) [![Coverage Status](https://coveralls.io/repos/schnittstabil/sugared-phpmd/badge.svg?branch=master&service=github)](https://coveralls.io/github/schnittstabil/sugared-phpmd?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/schnittstabil/sugared-phpmd/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/schnittstabil/sugared-phpmd/?branch=master) [![Code Climate](https://codeclimate.com/github/schnittstabil/sugared-phpmd/badges/gpa.svg)](https://codeclimate.com/github/schnittstabil/sugared-phpmd)
+# SugaredRim\PHPMD [![Build Status](https://travis-ci.org/sugared-rim/phpmd.svg?branch=master)](https://travis-ci.org/sugared-rim/phpmd) [![Coverage Status](https://coveralls.io/repos/sugared-rim/phpmd/badge.svg?branch=master&service=github)](https://coveralls.io/github/sugared-rim/phpmd?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sugared-rim/phpmd/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sugared-rim/phpmd/?branch=master) [![Code Climate](https://codeclimate.com/github/sugared-rim/phpmd/badges/gpa.svg)](https://codeclimate.com/github/sugared-rim/phpmd)
 
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/324cd69d-6042-451c-ad74-70769cccfd06/big.png)](https://insight.sensiolabs.com/projects/324cd69d-6042-451c-ad74-70769cccfd06)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/cc04033c-35c0-4152-908a-4304c019c708/big.png)](https://insight.sensiolabs.com/projects/cc04033c-35c0-4152-908a-4304c019c708)
 
 > PHPMD sweetened with ease :cherries:
 
-Sugared\PHPMD takes an opinionated view of code style checking with [PHPMD](https://github.com/phpmd/phpmd), it is preconfigured to get you up and running as quickly as possible.
+SugaredRim\PHPMD takes an opinionated view of code style checking with [PHPMD](https://github.com/phpmd/phpmd), it is preconfigured to get you up and running as quickly as possible.
 
 ## Install
 
 ```
-$ composer require --dev schnittstabil/sugared-phpmd
+$ composer require --dev sugared-rim/phpmd
 ```
 
 ## Usage
 
-Instead of running `phpmd` with all its options, just run `sugared-phpmd` - that's it:
+Instead of running `phpmd` with all its options, just run `sugared-rim-phpmd` - that's it:
 
 ```json
 {
     ...
     "require-dev": {
-        "schnittstabil/sugared-phpmd": ...
+        "sugared-rim/phpmd": ...
     },
     "scripts": {
-        "lint": "sugared-phpmd"
+        "lint": "sugared-rim/phpmd"
     }
 }
 ```
@@ -37,10 +37,10 @@ Some of the default settings:
 {
     ...
     "scripts": {
-        "lint": "sugared-phpmd"
+        "lint": "sugared-rim/phpmd"
     },
     "extra": {
-        "schnittstabil\/sugared-phpmd": {
+        "sugared-rim/phpmd": {
             "inputPath": "src,tests",
             "reportFormat": "text",
             "ruleSets": "cleancode,codesize,controversial,design,naming,unusedcode"

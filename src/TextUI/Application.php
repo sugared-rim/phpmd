@@ -1,6 +1,6 @@
 <?php
 
-namespace Schnittstabil\Sugared\PHPMD\TextUI;
+namespace SugaredRim\PHPMD\TextUI;
 
 use fool\echolog\Echolog;
 use PHPMD\RuleSetFactory;
@@ -10,7 +10,7 @@ use Schnittstabil\ComposerExtra\ComposerExtra;
 
 class Application
 {
-    protected $defaultNamespace = 'schnittstabil/sugared-phpmd';
+    protected $defaultNamespace = 'sugared-rim/phpmd';
     protected $defaultConfig;
     protected $logger;
 
@@ -24,7 +24,7 @@ class Application
         $this->logger = $logger;
         $this->defaultConfig = new \stdClass();
         $this->defaultConfig->presets = [
-            'Schnittstabil\\Sugared\\PHPMD\\DefaultPreset::get',
+            'SugaredRim\\PHPMD\\DefaultPreset::get',
         ];
     }
 

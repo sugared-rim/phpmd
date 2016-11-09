@@ -1,8 +1,8 @@
 <?php
 
-namespace Schnittstabil\Sugared\PHPMD\TextUI;
+namespace SugaredRim\PHPMD\TextUI;
 
-use Schnittstabil\Sugared\PHPMD\DefaultPreset;
+use SugaredRim\PHPMD\DefaultPreset;
 use VladaHejda\AssertException;
 
 class CommandLineOptionsTest extends \PHPUnit_Framework_TestCase

@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-use Schnittstabil\Sugared\PHPMD\TextUI\Application;
+use SugaredRim\PHPMD\TextUI\Application;
 
 foreach ([
     __DIR__.'/../../autoload.php',

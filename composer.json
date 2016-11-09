@@ -1,9 +1,9 @@
 {
-    "name": "schnittstabil/sugared-phpmd",
+    "name": "sugared-rim/phpmd",
     "type": "library",
     "description": "PHPMD sweetened with ease",
     "license": "MIT",
-    "keywords": ["sugared", "preconfigured", "phpmd", "standards", "pmd", "mess detection", "mess detector"],
+    "keywords": ["sugared", "preconfigured", "phpmd", "standards", "pmd", "mess detection", "mess detector", "sugared-rim"],
     "authors": [
         {
             "name": "Michael Mayer",
@@ -11,10 +11,10 @@
         }
     ],
     "autoload": {
-        "psr-4": { "Schnittstabil\\Sugared\\PHPMD\\": "src" }
+        "psr-4": { "SugaredRim\\PHPMD\\": "src" }
     },
     "autoload-dev": {
-        "psr-4": { "Schnittstabil\\Sugared\\PHPMD\\": "tests" }
+        "psr-4": { "SugaredRim\\PHPMD\\": "tests" }
     },
     "require": {
         "php": ">=5.6.0",
@@ -23,36 +23,36 @@
         "fool/echolog": "^1.0"
     },
     "require-dev": {
-        "schnittstabil/sugared-phpunit": "^1.0",
+        "sugared-rim/phpunit": "^2.0",
         "vladahejda/phpunit-assert-exception": "^1.0",
         "gamez/psr-testlogger": "^1.0"
     },
     "extra": {
-        "schnittstabil\/sugared-phpmd invalid inputfile": {
+        "sugared-rim/phpmd invalid inputfile": {
             "inputfile": ""
         }
     },
     "bin": [
-        "sugared-phpmd"
+        "sugared-rim-phpmd"
     ],
     "scripts": {
         "clean": "rm -rf build/",
         "doc": [
-            "sugared-sami",
+            "sugared-rim-sami",
             "phpmetrics --report-html build/phpmetrics/index.html src/"
         ],
         "lint": [
-            "sugared-phpcs",
-            "phpmd sugared-phpmd,src,tests text cleancode,codesize,controversial,design,naming,unusedcode",
-            "php-cs-fixer fix --dry-run --diff sugared-phpmd",
+            "sugared-rim-phpcs",
+            "phpmd sugared-rim-phpmd,src,tests text cleancode,codesize,controversial,design,naming,unusedcode",
+            "php-cs-fixer fix --dry-run --diff sugared-rim-phpmd",
             "php-cs-fixer fix --dry-run --diff src",
             "php-cs-fixer fix --dry-run --diff tests"
         ],
         "test": [
-            "sugared-phpunit",
-            "./sugared-phpmd",
+            "sugared-rim-phpunit",
+            "./sugared-rim-phpmd",
             "composer lint"
         ],
-        "travis": "sugared-phpunit"
+        "travis": "sugared-rim-phpunit"
     }
 }
