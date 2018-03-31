@@ -3,24 +3,20 @@
 namespace SugaredRim\PHPMD\TextUI;
 
 use SugaredRim\PHPMD\DefaultPreset;
-use VladaHejda\AssertException;
 
 class CommandLineOptionsTest extends \PHPUnit_Framework_TestCase
 {
-    use AssertException;
-
     public function testCommandLineOptionsShouldThrowOnMissingRulesets()
     {
-        $this->assertException(function () {
-            new CommandLineOptions(['-', 'src', 'text']);
-        }, \InvalidArgumentException::class, CommandLineOptions::INPUT_ERROR);
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionCode(CommandLineOptions::INPUT_ERROR);
+        new CommandLineOptions(['-', 'src', 'text']);
     }
 
     public function testCommandLineOptionsShouldThrowOnInvalidInputFileArgs()
     {
-        $this->assertException(function () {
-            new CommandLineOptions(['-', '--inputfile', '', 'text', 'cleancode']);
-        }, \InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
+        new CommandLineOptions(['-', '--inputfile', '', 'text', 'cleancode']);
     }
 
     public function testCommandLineOptionsShouldThrowOnInvalidInputFileOption()
@@ -28,9 +24,8 @@ class CommandLineOptionsTest extends \PHPUnit_Framework_TestCase
         $defaults = new \stdClass();
         $defaults->inputfile = uniqid();
 
-        $this->assertException(function () use ($defaults) {
-            new CommandLineOptions(['-', 'text', 'cleancode'], [], $defaults);
-        }, \InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
+        new CommandLineOptions(['-', 'text', 'cleancode'], [], $defaults);
     }
 
     public function testCommandLineOptionsShouldNotThrowOnValidInputFileOption()

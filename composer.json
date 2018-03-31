@@ -24,7 +24,6 @@
     },
     "require-dev": {
         "sugared-rim/phpunit": "^2.0",
-        "vladahejda/phpunit-assert-exception": "^1.0",
         "gamez/psr-testlogger": "^1.0"
     },
     "extra": {
