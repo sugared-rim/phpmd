@@ -4,7 +4,7 @@ namespace SugaredRim\PHPMD\TextUI;
 
 use SugaredRim\PHPMD\DefaultPreset;
 
-class CommandLineOptionsTest extends \PHPUnit_Framework_TestCase
+class CommandLineOptionsTest extends \PHPUnit\Framework\TestCase
 {
     public function testCommandLineOptionsShouldThrowOnMissingRulesets()
     {
@@ -34,6 +34,7 @@ class CommandLineOptionsTest extends \PHPUnit_Framework_TestCase
         $defaults->inputfile = __DIR__.'/../Fixtures/inputfile.txt';
 
         new CommandLineOptions(['-', 'text', 'cleancode'], [], $defaults);
+        $this->assertTrue(true);
     }
 
     /**
@@ -42,5 +43,6 @@ class CommandLineOptionsTest extends \PHPUnit_Framework_TestCase
     public function testCommandLineOptionsShouldNotThrowOnDefaultOptions()
     {
         new CommandLineOptions(['-'], [], DefaultPreset::get());
+        $this->assertTrue(true);
     }
 }

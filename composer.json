@@ -18,13 +18,12 @@
     },
     "require": {
         "php": ">=5.6.0",
-        "schnittstabil/composer-extra": "^1.0",
         "phpmd/phpmd": "^2.3",
-        "fool/echolog": "^1.0"
+        "psr/log": "^1.0",
+        "schnittstabil/composer-extra": "^1.0 || ^2.0"
     },
     "require-dev": {
-        "sugared-rim/phpunit": "^2.0",
-        "gamez/psr-testlogger": "^1.0"
+        "sugared-rim/phpunit": "^2.0 || ^6.0 || ^7.0"
     },
     "extra": {
         "sugared-rim/phpmd invalid inputfile": {
